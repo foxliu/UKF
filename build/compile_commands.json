@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/Users/brilliantliu/git/CarND-Unscented-Kalman-Filter-Project/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -I/usr/local/include -I/usr/local/opt/openssl/include  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk   -std=c++11 -o CMakeFiles/UnscentedKF.dir/src/ukf.cpp.o -c /Users/brilliantliu/git/CarND-Unscented-Kalman-Filter-Project/src/ukf.cpp",
+  "file": "/Users/brilliantliu/git/CarND-Unscented-Kalman-Filter-Project/src/ukf.cpp"
+},
+{
+  "directory": "/Users/brilliantliu/git/CarND-Unscented-Kalman-Filter-Project/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -I/usr/local/include -I/usr/local/opt/openssl/include  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk   -std=c++11 -o CMakeFiles/UnscentedKF.dir/src/main.cpp.o -c /Users/brilliantliu/git/CarND-Unscented-Kalman-Filter-Project/src/main.cpp",
+  "file": "/Users/brilliantliu/git/CarND-Unscented-Kalman-Filter-Project/src/main.cpp"
+},
+{
+  "directory": "/Users/brilliantliu/git/CarND-Unscented-Kalman-Filter-Project/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -I/usr/local/include -I/usr/local/opt/openssl/include  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk   -std=c++11 -o CMakeFiles/UnscentedKF.dir/src/tools.cpp.o -c /Users/brilliantliu/git/CarND-Unscented-Kalman-Filter-Project/src/tools.cpp",
+  "file": "/Users/brilliantliu/git/CarND-Unscented-Kalman-Filter-Project/src/tools.cpp"
+}
+]
