@@ -26,7 +26,7 @@ UKF::UKF() {
   P_ = MatrixXd(5, 5);
 
   // Process noise standard deviation longitudinal acceleration in m/s^2
-  std_a_ = 1.5;
+  std_a_ = 1.75;
 
   // Process noise standard deviation yaw acceleration in rad/s^2
   std_yawdd_ = 0.4;
@@ -125,9 +125,9 @@ void UKF::ProcessMeasurement(MeasurementPackage meas_package) {
       ro = meas_package.raw_measurements_[0];
       phi = meas_package.raw_measurements_[1];
       ro_dot = meas_package.raw_measurements_[2];
-      // x_ << ro * cos(phi), ro * sin(phi), 0, 0, 0;
+      x_ << ro * cos(phi), ro * sin(phi), 0, 0, 0;
       // x_ << ro * cos(phi), ro * sin(phi), 0, ro_dot * cos(phi), ro_dot * sin(phi);
-      x_ << ro * cos(phi), ro * sin(phi), 4, ro_dot * cos(phi), ro_dot * sin(phi);
+      // x_ << ro * cos(phi), ro * sin(phi), 4, ro_dot * cos(phi), ro_dot * sin(phi);
 
       ///* state covariance matrix
 
@@ -299,6 +299,9 @@ void UKF::UpdateLidar(MeasurementPackage meas_package) {
 
   You'll also need to calculate the lidar NIS.
   */
+
+  ///* Use UKF arithmetic
+  /**
   MatrixXd Zsig;
   VectorXd z_pred;
   MatrixXd S;
@@ -310,6 +313,23 @@ void UKF::UpdateLidar(MeasurementPackage meas_package) {
       meas_package.raw_measurements_[1];
 
   this->UpdateState(z, S, Zsig, z_pred, n_z_ladar_);
+  */
+
+  ///* Use Liner arithmetic
+  VectorXd z(n_z_ladar_);
+  z << meas_package.raw_measurements_[0],
+      meas_package.raw_measurements_[1];
+
+  MatrixXd H(n_z_ladar_, n_x_);
+  H << 1,0,0,0,0,
+       0,1,0,0,0;
+  VectorXd y = z - H * x_;
+  MatrixXd Ht = H.transpose();
+  MatrixXd S = H * P_ * Ht + R_ladar_;
+  MatrixXd K = P_ * Ht * S.inverse();
+  x_ = x_ + K * y;
+  MatrixXd I = MatrixXd::Identity(n_x_, n_x_);
+  P_ = (I - K * H) * P_;
 }
 
 /**
