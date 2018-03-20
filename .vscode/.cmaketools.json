@@ -1,0 +1,63 @@
+{
+  "variant": {
+    "label": "Debug",
+    "keywordSettings": {
+      "buildType": "debug"
+    },
+    "description": "Emit debug information without performing optimizations"
+  },
+  "activeEnvironments": [],
+  "codeModel": {
+    "configurations": [
+      {
+        "name": "Debug",
+        "projects": [
+          {
+            "buildDirectory": "/Users/brilliantliu/git/UKF/build",
+            "name": "UnscentedKF",
+            "sourceDirectory": "/Users/brilliantliu/git/UKF",
+            "targets": [
+              {
+                "artifacts": [
+                  "/Users/brilliantliu/git/UKF/build/UnscentedKF"
+                ],
+                "buildDirectory": "/Users/brilliantliu/git/UKF/build",
+                "fileGroups": [
+                  {
+                    "compileFlags": "-g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk   -std=c++11",
+                    "includePath": [
+                      {
+                        "path": "/usr/local/include"
+                      },
+                      {
+                        "path": "/usr/local/opt/openssl/include"
+                      }
+                    ],
+                    "isGenerated": false,
+                    "language": "CXX",
+                    "sources": [
+                      "src/ukf.cpp",
+                      "src/main.cpp",
+                      "src/tools.cpp"
+                    ]
+                  }
+                ],
+                "fullName": "UnscentedKF",
+                "linkLanguageFlags": "-g",
+                "linkLibraries": "-Wl,-rpath,/usr/local/lib -Wl,-rpath,/usr/local/opt/openssl/lib -Wl,-rpath,\"/usr/local/Cellar/libuv/1*/lib\" -lz -lssl -luv -luWS",
+                "linkPath": "-L/usr/local/lib  -L/usr/local/opt/openssl/lib  -L\"/usr/local/Cellar/libuv/1*/lib\"",
+                "linkerLanguage": "CXX",
+                "name": "UnscentedKF",
+                "sourceDirectory": "/Users/brilliantliu/git/UKF",
+                "type": "EXECUTABLE"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cookie": "0.17467179055219528",
+    "inReplyTo": "codemodel",
+    "type": "reply"
+  }
+}
