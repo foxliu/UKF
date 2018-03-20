@@ -1,2 +1,16 @@
 {
+    "clang.cflags": [
+        "-I/usr/local/include",
+        "-I/usr/local/opt/openssl/include",
+        "-g",
+        "-isysroot",
+        "-std=c11"
+    ],
+    "clang.cxxflags": [
+        "-I/usr/local/include",
+        "-I/usr/local/opt/openssl/include",
+        "-g",
+        "-isysroot",
+        "-std=c++1z"
+    ]
 }

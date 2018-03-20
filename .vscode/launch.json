@@ -5,11 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug",
-            "type": "gdb",
+            "name": "(lldb) Launch",
+            "type": "cppdbg",
             "request": "launch",
-            "target": "${workspaceFolder}/build/UnscentedKF",
-            "cwd": "${workspaceRoot}"
+            "program": "${workspaceFolder}/build/UnscentedKF",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "lldb"
         }
     ]
 }
